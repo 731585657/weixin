@@ -10,7 +10,7 @@ class Repair extends  Validate{
         ['tel','require','电话必须填写'],
         ['address','require','地址必须填写'],
         ['problem','require','事故详情必须填写'],
-        ['status','require','必须填写'],
+        //['status','require','必须填写'],
 
 
     ];

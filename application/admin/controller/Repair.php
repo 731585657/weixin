@@ -13,9 +13,11 @@ use think\Request;
 class  Repair extends Admin {
     public function index(){
         /* 获取频道列表 */
-        $list = \think\Db::name('repair')->select();
+        $list = \think\Db::name('repair')->paginate(2);
         //var_dump($list);exit;
+
         $this->assign('list', $list);
+
         $this->assign('meta_title' , '事故报修');
         return $this->fetch();
     }

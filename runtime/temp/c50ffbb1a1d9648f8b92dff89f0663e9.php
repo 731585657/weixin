@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"D:\phpStudy\WWW\twothink\public/../application/admin/view/default/repair\index.html";i:1506704749;s:82:"D:\phpStudy\WWW\twothink\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"D:\phpStudy\WWW\twothink\public/../application/admin/view/default/repair\index.html";i:1506761439;s:82:"D:\phpStudy\WWW\twothink\public/../application/admin/view/default/public\base.html";i:1496373782;}*/ ?>
 <!doctype html>
 <html>
 <head>
@@ -137,7 +137,7 @@
             <td><?php echo $repair['address']; ?></td>
             <td><?php echo $repair['problem']; ?></td>
             <td><?php echo date("Y-m-d H:i:s",$repair['create_time']); ?></td>
-            <td><?php echo $repair['status']; ?></td>
+            <td><?php echo !empty($repair['status']) && $repair['status']==1?'已处理':'未处理'; ?></td>
 
             <td>
                 <a title="编辑" href="<?php echo url('edit?id='.$repair['id'].'&pid='.$pid); ?>">编辑</a>
@@ -149,6 +149,9 @@
         <?php endif; ?>
         </tbody>
     </table>
+</div>
+<div class="page">
+<?php echo $list->render(); ?>
 </div>
 
         </div>
